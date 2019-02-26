@@ -1,73 +1,28 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const baseConfig = require('./base.config')(process.env.NODE_ENV);
 
 module.exports = {
+  /** Super fast code generation */
   devtool: 'eval',
-  entry: [
-    './src/index'
-  ],
-  output: {
-    path: path.resolve(__dirname, '..' ,'dist'),
-    filename: 'bundle.js',
-  },
-  resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
-  },
+  ...baseConfig.config,
+  /** webpack-dev-server config */
   devServer: {
-    contentBase: path.resolve(__dirname, '..', 'dist'),
+    contentBase: baseConfig.settings.outPath,
+    /** enable hot reload */
     hot: true,
   },
-  optimization: {
-    usedExports: true,
-  },
   module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-        include: path.resolve(__dirname, '..', 'src'),
-      },
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: [
-          'babel-loader',
-          'source-map-loader',
-        ],
-        include: path.resolve(__dirname, '..', 'src'),
-      },
-      {
-        test: /\.(css|less|sass|scss)$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'typings-for-css-modules-loader',
-            options: {
-              modules: true,
-              importLoaders: 2,
-              namedExport: true,
-              camelCase: true,
-              sourceMap: true,
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-            },
-          },
-          'postcss-loader',
-          'sass-loader',
-        ],
-      }
-    ],
+    rules: baseConfig.rules,
   },
   plugins: [
+    /** Injects bundle entries into html template */
     new HtmlWebPackPlugin({
-      template: './public/index.html'
+      template: baseConfig.settings.indexHtmlFile,
     }),
-    new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
-    }),
+    ...baseConfig.plugins,
+    /** Hot module replacement plugin to enable reload of only changed modules */
     new webpack.HotModuleReplacementPlugin(),
   ],
 }

@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'camellia';
+  src: url('../../fonts/camellia.ttf') format('truetype');
+}
+
 .content {
   font-size: 19px;
+  font-family: 'camellia'
+}
+
+.img {
+  background: url('../../img/krishna.jpg');
+  display: block;
+  width: 100px;
+  height: 100px;
 }
