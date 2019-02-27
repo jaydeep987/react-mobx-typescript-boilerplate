@@ -14,9 +14,10 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      'node': {
-        'extensions': ['.js', '.jsx', '.ts', '.tsx']
-      }
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      },
+      typescript: {}
     }
   },
   rules: {
@@ -32,14 +33,13 @@ module.exports = {
       ignoreTrailingComments: true,
       ignoreUrls: true,
     }],
-    'no-unused-vars': ['error', {
-      args: 'none',
-    }],
+    'no-unused-vars': 'off',
     'import/prefer-default-export': false,
     'no-param-reassign': 'off',
     'no-use-before-define': ['error', {
       functions: false,
     }],
+    'react/jsx-boolean-value': 'off',
     'no-plusplus': 'off',
     'no-restricted-syntax': [ // allows for-in
       'error',

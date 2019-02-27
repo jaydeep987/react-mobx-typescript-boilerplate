@@ -3,6 +3,7 @@
 node_modules
 coverage
 dist
+trasnspiled
 bundle-info
 
 *.vscode

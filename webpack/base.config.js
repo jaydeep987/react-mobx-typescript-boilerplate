@@ -8,6 +8,7 @@ const settings = {
   outPath: path.resolve(__dirname, '..', 'dist'),
   srcDir: path.resolve(__dirname, '..', 'src'),
   indexHtmlFile: path.resolve(__dirname, '..', 'public/index.html'),
+  transpiledPath: path.resolve(__dirname, '..', 'transpiled'),
   bundleAnalyzerReportPath: path.resolve(__dirname, '..', 'bundle-info/bundle-analysis-report.html'),
 }
 
@@ -30,6 +31,11 @@ module.exports = (env) => {
       /** Resolve extensions and paths */
       resolve: {
         extensions: ['.js', '.ts', '.tsx'],
+        alias: {
+          '~common': path.resolve(settings.srcDir, 'common'),
+          '~components': path.resolve(settings.srcDir, 'components'),
+          '~stores': path.resolve(settings.srcDir, 'stores'),
+        }
       },
       /** Optimization settings */
       optimization: {
@@ -39,14 +45,14 @@ module.exports = (env) => {
         splitChunks: {
           cacheGroups: {
             commons: {
-              chunks: 'initial',
+              chunks: 'all',
               minChunks: 2,
               maxInitialRequests: 5,
               minSize: 0,
             },
             vendor: {
               test: /node_modules/,
-              chunks: 'initial',
+              chunks: 'all',
               name: 'vendor',
               priority: 10,
               enforce: true,

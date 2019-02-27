@@ -3,43 +3,14 @@
     "tslint:all",
     "tslint-eslint-rules"
   ],
-  "linterOptions": {
-    "exclude": ["src/**/*.test.tsx", "src/**/*.test.ts", "src/common/test-utils.ts"]
-  },
   "rules": {
     "curly": [true, "next-line-single-line"],
     "comment-format": false,
     "interface-name": false,
     "member-access": [true, "no-public"],
-    "member-ordering": [
-      true,
-      {
-        "order": [
-          "public-static-field",
-          "protected-static-field",
-          "private-static-field",
-
-          "protected-instance-field",
-          "public-instance-field",
-          "private-instance-field",
-
-          "public-constructor",
-          "protected-constructor",
-          "private-constructor",
-
-          "public-static-method",
-          "protected-static-method",
-          "private-static-method",
-
-          "public-instance-method",
-          "protected-instance-method",
-          "private-instance-method"
-        ]
-      }
-    ],
     "typedef": [true, "call-signature", "parameter"],
     "no-default-export": true,
-    "no-implicit-dependencies": [true, ["~common", "~components", "~stores"]],
+    "no-implicit-dependencies": [true, "dev", ["~common", "~components", "~stores"]],
     "no-submodule-imports": false,
     "no-inferred-empty-object-type": false,
     "no-trailing-whitespace": [true, "ignore-jsdoc"],
@@ -47,6 +18,9 @@
     "object-literal-sort-keys": false,
     "one-variable-per-declaration": [true, "ignore-for-loop"],
     "only-arrow-functions": [true, "allow-named-functions"],
+    "no-magic-numbers": false,
+    "no-floating-promises": false,
+    "no-non-null-assertion": false,
     "ordered-imports": [
       true,
       {
@@ -54,6 +28,8 @@
         "named-imports-order": "lowercase-last"
       }
     ],
+    "no-console": false,
+    "newline-per-chained-call": false,
     "promise-function-async": false,
     "strict-boolean-expressions": false,
     "quotemark": [true, "single", "jsx-double"],
