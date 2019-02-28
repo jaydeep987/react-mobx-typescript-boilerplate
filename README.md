@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/jaydeep987/react-mobx-typescript-boilerplate.svg?branch=without-router)](https://travis-ci.com/jaydeep987/react-mobx-typescript-boilerplate)
+
 # react-mobx-typescript boilerplate (without react-router)
 
 >Ready to use boilerplate to speed up development of react app from scratch!
