@@ -16,7 +16,7 @@ import { reaction } from 'mobx';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { WithTranslation, withTranslation } from 'react-i18next';
-import { IconSize } from '~common/icon-size';
+import { IconSize, LanguageKeys, Languages } from '~common/constants';
 import { CounterStore } from '~stores/counter';
 import { SettingStore } from '~stores/settings';
 
@@ -60,6 +60,17 @@ class Counter extends React.Component<CounterProps> {
     this.injectedProps.settingStore.setLocale(event.target.value);
   }
 
+  /** Renders languages selectbox items */
+  renderLanguageMenuItems = () => (
+    Object
+      .keys(LanguageKeys)
+      .map((value: string) => (
+        <MenuItem key={value} value={value}>
+          {Languages[value]}
+        </MenuItem>
+      ))
+  )
+
   /** Renders counter component */
   render(): JSX.Element {
     const {
@@ -86,8 +97,7 @@ class Counter extends React.Component<CounterProps> {
                 value={settingStore.locale}
                 onChange={this.handleLocaleChange}
               >
-                <MenuItem value="en">English</MenuItem>
-                <MenuItem value="jp">日本語</MenuItem>
+                {this.renderLanguageMenuItems()}
               </Select>
             </Paper>
           </Toolbar>
