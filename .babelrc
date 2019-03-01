@@ -1,0 +1,20 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    "@babel/typescript",
+    ["@babel/preset-env", { "modules": false }]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/proposal-class-properties", { "loose": true }],
+    "@babel/plugin-proposal-object-rest-spread",
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["@babel/preset-env", { "modules": "commonjs" }],
+        "jest"
+      ]
+    }
+  }
+}
