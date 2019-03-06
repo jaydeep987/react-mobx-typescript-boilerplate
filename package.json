@@ -36,7 +36,8 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-i18next": "^10.2.0",
-    "react-jss": "^8.6.1"
+    "react-jss": "^8.6.1",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
@@ -52,6 +53,7 @@
     "@types/loglevel": "^1.5.4",
     "@types/react-dom": "^16.8.2",
     "@types/react-jss": "^8.6.3",
+    "@types/react-router-dom": "^4.3.1",
     "@types/webpack-env": "^1.13.7",
     "@typescript-eslint/eslint-plugin-tslint": "^1.4.2",
     "@typescript-eslint/parser": "^1.4.2",

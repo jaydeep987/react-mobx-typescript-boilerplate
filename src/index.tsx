@@ -1,8 +1,8 @@
 import * as loglevel from 'loglevel';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import { App } from '~pages/app/app';
 
-import { App } from './components/app/app';
 import { initI18Next } from './i18n/i18n';
 
 /** initialize i18n */

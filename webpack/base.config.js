@@ -35,6 +35,9 @@ module.exports = (env) => {
           '~common': path.resolve(settings.srcDir, 'common'),
           '~components': path.resolve(settings.srcDir, 'components'),
           '~stores': path.resolve(settings.srcDir, 'stores'),
+          '~pages': path.resolve(settings.srcDir, 'pages'),
+          '~types': path.resolve(settings.srcDir, 'types'),
+          '~img': path.resolve(settings.srcDir, 'img'),
         }
       },
       /** Optimization settings */

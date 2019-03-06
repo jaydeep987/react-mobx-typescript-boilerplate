@@ -10,7 +10,7 @@
     "member-access": [true, "no-public"],
     "typedef": [true, "call-signature", "parameter"],
     "no-default-export": true,
-    "no-implicit-dependencies": [true, "dev", ["~common", "~components", "~stores"]],
+    "no-implicit-dependencies": [true, "dev", ["~common", "~components", "~stores", "~pages", "~types", "~img"]],
     "no-submodule-imports": false,
     "no-inferred-empty-object-type": false,
     "no-trailing-whitespace": [true, "ignore-jsdoc"],
@@ -19,6 +19,7 @@
     "one-variable-per-declaration": [true, "ignore-for-loop"],
     "only-arrow-functions": [true, "allow-named-functions"],
     "no-magic-numbers": false,
+    "match-default-export-name": false,
     "no-floating-promises": false,
     "no-non-null-assertion": false,
     "ordered-imports": [

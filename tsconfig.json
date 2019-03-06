@@ -32,7 +32,10 @@
     "paths": {                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
       "~components/*": ["src/components/*"],
       "~stores/*": ["src/stores/*"],
-      "~common/*": ["src/common/*"]
+      "~common/*": ["src/common/*"],
+      "~pages/*": ["src/pages/*"],
+      "~types/*": ["src/types/*"],
+      "~img/*": ["src/img/*"]
     },
     "esModuleInterop": true,             /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
 

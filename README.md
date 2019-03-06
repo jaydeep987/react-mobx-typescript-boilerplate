@@ -1,15 +1,19 @@
+[![Node version](https://img.shields.io/node/v/react.svg?style=flat)](http://nodejs.org/download/)
 [![Build Status](https://travis-ci.com/jaydeep987/react-mobx-typescript-boilerplate.svg?branch=without-router)](https://travis-ci.com/jaydeep987/react-mobx-typescript-boilerplate)
 
-# react-mobx-typescript boilerplate (without react-router)
+# react-mobx-typescript boilerplate
 
 >Ready to use boilerplate to speed up development of react app from scratch!
 
-Boilerplate in this branch is for single page component kind of apps. So it __does not include `react-router`__.
+Boilerplate in this branch is for multi page component kind of apps. 
+
+If you want to get boilerplate *without react-router*, please checkout branch `without-router`.
 
 # Features
   - Using `Babel7` and `typescript` to use latest `ecma` features
-  - Latest `react` version included
+  - `react v16.8.3` included
   - Configured with `mobx`, no more bunch of code writing in redux or something
+  - Configured `react-router` for routing support
   - *Themed* with beautiful `material-ui`!
   - Included rich [*icon* library](https://materialdesignicons.com/)
   - `Webpack` configuration ready for *production*
@@ -31,4 +35,4 @@ Boilerplate in this branch is for single page component kind of apps. So it __do
 
 Feel free to contribute if you like it and you think there is scope of improvement.
 
-Fork this repo and make pr!
+Fork this repo and make PR!

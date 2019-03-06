@@ -1,0 +1,26 @@
+import { Paper, Typography, withStyles } from '@material-ui/core';
+import * as React from 'react';
+import { StyledComponentProps } from '~types/styled';
+
+import { Classes, styles } from './styles';
+
+const PageHeader: React.FunctionComponent<PageHeaderProps> = (props: PageHeaderProps): JSX.Element => {
+  const { classes, headerTitle } = props;
+
+  return (
+    <Paper className={classes.container}>
+      <Typography variant="h5" color="inherit">
+        {headerTitle}
+      </Typography>
+    </Paper>
+  );
+};
+
+interface PageHeaderProps extends StyledComponentProps<Classes> {
+  /** Page header title */
+  headerTitle: string;
+}
+
+const StyledPageHeader = withStyles(styles)(PageHeader);
+
+export { StyledPageHeader as PageHeader };
