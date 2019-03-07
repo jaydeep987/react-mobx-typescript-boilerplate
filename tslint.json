@@ -1,0 +1,64 @@
+{
+  "extends": [
+    "tslint:all",
+    "tslint-eslint-rules"
+  ],
+  "linterOptions": {
+    "exclude": ["src/**/*.test.tsx", "src/**/*.test.ts", "src/common/test-utils.ts"]
+  },
+  "rules": {
+    "curly": [true, "next-line-single-line"],
+    "comment-format": false,
+    "interface-name": false,
+    "member-access": [true, "no-public"],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+
+          "protected-instance-field",
+          "public-instance-field",
+          "private-instance-field",
+
+          "public-constructor",
+          "protected-constructor",
+          "private-constructor",
+
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method",
+
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method"
+        ]
+      }
+    ],
+    "typedef": [true, "call-signature", "parameter"],
+    "no-default-export": true,
+    "match-default-export-name": false,
+    "no-implicit-dependencies": [true, ["~common", "~components", "~stores", "~pages", "~types", "~img"]],
+    "no-submodule-imports": false,
+    "no-inferred-empty-object-type": false,
+    "no-trailing-whitespace": [true, "ignore-jsdoc"],
+    "no-unsafe-any": false,
+    "object-literal-sort-keys": false,
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "only-arrow-functions": [true, "allow-named-functions"],
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "named-imports-order": "lowercase-last"
+      }
+    ],
+    "promise-function-async": false,
+    "strict-boolean-expressions": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "file-name-casing": [true, "kebab-case"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+  }
+}

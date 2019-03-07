@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "esnext",                  /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. */
+    "module": "esnext",                  /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+    "lib": [
+      "es2015",
+      "es6",
+      "esnext",
+      "dom"
+    ],                                   /* Specify library files to be included in the compilation. */
+    "jsx": "react",                      /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
+    "sourceMap": true,                   /* Generates corresponding '.map' file. */
+    "outDir": "./trasnspiled",           /* Redirect output structure to the directory. */
+    "removeComments": true,              /* Do not emit comments to output. */
+    "isolatedModules": true,             /* Transpile each file as a separate module (similar to 'ts.transpileModule'). */
+
+    /* Strict Type-Checking Options */
+    "strict": true,                      /* Enable all strict type-checking options. */
+    "noImplicitAny": true,               /* Raise error on expressions and declarations with an implied 'any' type. */
+    "strictFunctionTypes": true,         /* Enable strict checking of function types. */
+    "strictBindCallApply": true,         /* Enable strict 'bind', 'call', and 'apply' methods on functions. */
+
+    /* Additional Checks */
+    "noUnusedLocals": true,              /* Report errors on unused locals. */
+    "noUnusedParameters": true,          /* Report errors on unused parameters. */
+    "noImplicitReturns": true,           /* Report error when not all code paths in function return a value. */
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",          /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */
+    "baseUrl": "./",                     /* Base directory to resolve non-absolute module names. */
+    "paths": {                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+      "~components/*": ["src/components/*"],
+      "~stores/*": ["src/stores/*"],
+      "~common/*": ["src/common/*"],
+      "~pages/*": ["src/pages/*"],
+      "~types/*": ["src/types/*"],
+      "~img/*": ["src/img/*"]
+    },
+    "esModuleInterop": true,             /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
+
+    /* Experimental Options */
+    "experimentalDecorators": true,      /* Enables experimental support for ES7 decorators. */
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "tslint:all",
+    "tslint-eslint-rules"
+  ],
+  "rules": {
+    "curly": [true, "next-line-single-line"],
+    "comment-format": false,
+    "interface-name": false,
+    "member-access": [true, "no-public"],
+    "typedef": [true, "call-signature", "parameter"],
+    "no-default-export": true,
+    "no-implicit-dependencies": [true, "dev", ["~common", "~components", "~stores", "~pages", "~types", "~img"]],
+    "no-submodule-imports": false,
+    "no-inferred-empty-object-type": false,
+    "no-trailing-whitespace": [true, "ignore-jsdoc"],
+    "no-unsafe-any": false,
+    "object-literal-sort-keys": false,
+    "one-variable-per-declaration": [true, "ignore-for-loop"],
+    "only-arrow-functions": [true, "allow-named-functions"],
+    "no-magic-numbers": false,
+    "match-default-export-name": false,
+    "no-floating-promises": false,
+    "no-non-null-assertion": false,
+    "ordered-imports": [
+      true,
+      {
+        "grouped-imports": true,
+        "named-imports-order": "lowercase-last"
+      }
+    ],
+    "no-console": false,
+    "newline-per-chained-call": false,
+    "promise-function-async": false,
+    "strict-boolean-expressions": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "file-name-casing": [true, "kebab-case"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-pascal-case"]
+  }
+}
