@@ -4,6 +4,9 @@ import { StyledComponentProps } from '~types/styled';
 
 import { Classes, styles } from './styles';
 
+/**
+ * Common wrapper container component for a page. To have common page style
+ */
 const PageContent: React.FunctionComponent<PageContentProps> = (props: PageContentProps): JSX.Element => {
   const { classes, children } = props;
 

@@ -14,14 +14,14 @@ export const Dashboard: React.FunctionComponent<DashboardProps> = (props: Dashbo
     <div>
       <PageHeader headerTitle={t('pageHeadTitle.dashboard')} />
       <PageContent>
-        <Typography variant="h3">
+        <Typography variant="h3" className="text">
           {t('dashboard.text')}
         </Typography>
         <div>
-          <img src={photo1} alt="photo1" />
+          <img className="photo1" src={photo1} alt="photo1" />
         </div>
         <div>
-          <img src={photo2} alt="photo2" />
+          <img className="photo2" src={photo2} alt="photo2" />
         </div>
       </PageContent>
     </div>

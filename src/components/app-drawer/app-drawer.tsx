@@ -16,9 +16,9 @@ import HomeIcon from '@material-ui/icons/Home';
 import { mdiCounter } from '@mdi/js';
 import Icon from '@mdi/react';
 import classNames from 'classnames';
-import i18next from 'i18next';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
+import { WithTranslation } from 'react-i18next';
 import { Link, LinkProps } from 'react-router-dom';
 import { IconSize } from '~common/constants';
 import { SettingStore } from '~stores/settings';
@@ -39,7 +39,7 @@ class AppDrawer extends React.Component<AppDrawerProps> {
 
   /** Drawer links */
   getLinks(): Links[] {
-    const { classes, translate } = this.props;
+    const { classes, t: translate } = this.props;
 
     return [
       { path: '/', icon: <HomeIcon className={classes.drawerLinkIcon} />, text: translate('pageHeadTitle.home') },
@@ -143,14 +143,9 @@ interface StoreProps {
   settingStore: SettingStore;
 }
 
-interface MainProps {
-  /** Translation function */
-  translate: i18next.TFunction;
-}
-
 type InjectedProps = StoreProps;
 
-type AppDrawerProps = MainProps & Partial<StoreProps> & StyledComponentProps<Classes>;
+type AppDrawerProps = WithTranslation & Partial<StoreProps> & StyledComponentProps<Classes>;
 
 const StyledAppDrawer = withStyles(styles)(AppDrawer);
 

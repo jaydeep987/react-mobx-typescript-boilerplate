@@ -7,8 +7,8 @@
     "start": "NODE_ENV=development webpack-dev-server --mode development --hotOnly",
     "prebuild": "npm run lint",
     "build": "NODE_ENV=production webpack --mode production",
-    "lint": "tsc && tslint --project tsconfig.json src/**/*.tsx src/**/*.ts && eslint src/**/*.tsx src/**/*.ts",
-    "test": "tslint --fix --project tsconfig.json -c tslint.test.json src/**/*.test.tsx src/**/*.test.ts && jest"
+    "lint": "tsc && tslint --project tsconfig.json src/**/*.tsx src/**/*.ts -e \"src/**/*.test.tsx\" && eslint src/**/*.tsx src/**/*.ts",
+    "test": "tslint --fix --project tsconfig.json -c tslint.test.json src/**/*.test.tsx src/**/*.test.ts && jest --coverage"
   },
   "repository": {
     "type": "git",

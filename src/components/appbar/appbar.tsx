@@ -22,8 +22,12 @@ import { StyledComponentProps } from '~types/styled';
 
 import { Classes, styles } from './styles';
 
+/**
+ * Appbar, the app header which will be alwas there.
+ * Containing various tools like menuButton, language selector etc
+ */
 const Appbar: React.FunctionComponent<AppbarProps> = ((props: AppbarProps): JSX.Element => {
-  const { classes, i18n, translate } = props;
+  const { classes, i18n, t: translate } = props;
   const { settingStore } = props as InjectedProps;
 
   reaction(
@@ -98,7 +102,7 @@ interface InjectedProps {
 
 interface AppbarProps extends StyledComponentProps<Classes>, Partial<InjectedProps> {
   /** translation function */
-  translate: i18next.TFunction;
+  t: i18next.TFunction;
   /** i18n instance */
   i18n: i18next.i18n;
 }
