@@ -23,7 +23,7 @@ If you want to get boilerplate *without react-router*, please checkout branch `w
 
 # Getting started
 
-*Clone* [this repo](https://github.com/jaydeep987/react-mobx-typescript-boilerplate.git) and checkout branch: `without-router`
+*Clone* [this repo](https://github.com/jaydeep987/react-mobx-typescript-boilerplate.git)
 
   - `npm install`
   - *Start dev server:* `npm start`
