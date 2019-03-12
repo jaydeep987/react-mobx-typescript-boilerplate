@@ -29,10 +29,10 @@ class Home extends React.Component<HomeProps> {
       <div className={classes.container}>
         <CssBaseline />
         <Appbar
-          translate={t}
+          t={t}
           i18n={i18n}
         />
-        <AppDrawer translate={t} />
+        <AppDrawer t={t} i18n={i18n} />
         <main className={classes.mainContent}>
           <div className={classes.toolbar} />
           <div className={classes.innerWrapper}>

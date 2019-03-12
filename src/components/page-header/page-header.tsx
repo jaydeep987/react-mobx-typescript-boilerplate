@@ -4,12 +4,15 @@ import { StyledComponentProps } from '~types/styled';
 
 import { Classes, styles } from './styles';
 
+/**
+ * Common style page header.
+ */
 const PageHeader: React.FunctionComponent<PageHeaderProps> = (props: PageHeaderProps): JSX.Element => {
   const { classes, headerTitle } = props;
 
   return (
     <Paper className={classes.container}>
-      <Typography variant="h5" color="inherit">
+      <Typography variant="h5" color="inherit" className="headerTitle">
         {headerTitle}
       </Typography>
     </Paper>
