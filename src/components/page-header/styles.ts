@@ -13,5 +13,6 @@ export const styles: StyleRulesCallback<Classes> = (): Record<Classes, CSSProper
     padding: 11,
     width: '100%',
     height: PAGE_HEADER_HEIGHT,
+    borderRadius: 0,
   },
 });

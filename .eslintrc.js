@@ -22,6 +22,7 @@ module.exports = {
   },
   rules: {
     strict: ['error', 'never'],
+    'arrow-parens': 'off',
     'spaced-comment': ['error', 'always', {
       exceptions: ['/'],
     }],

@@ -7,7 +7,8 @@ export type Classes =
   'mainContent' |
   'mainWrapper' |
   'toolbar' |
-  'innerWrapper';
+  'innerWrapper' |
+  'pageLoading';
 
 const MAIN_CONTENT_PADDING = 3;
 
@@ -30,4 +31,7 @@ export const styles: StyleRulesCallback<Classes> = (theme: Theme): Record<Classe
     boxShadow: '3px 3px 6px #e0e0e0, -3px 3px 6px #e0e0e0',
   },
   toolbar: appDrawerStyles(theme).toolbar,
+  pageLoading: {
+    margin: 15,
+  },
 });

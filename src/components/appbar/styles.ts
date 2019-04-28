@@ -16,6 +16,7 @@ export type Classes =
 
 export const styles: StyleRulesCallback<Classes> = (theme: Theme): Record<Classes, CSSProperties> => ({
   appBar: {
+    boxShadow: 'none',
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(['width', 'height'], {
       easing: theme.transitions.easing.sharp,

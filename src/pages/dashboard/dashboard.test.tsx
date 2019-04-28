@@ -1,6 +1,5 @@
 import { mount } from 'enzyme';
 import * as React from 'react';
-import { withTranslation } from 'react-i18next';
 
 import { initI18Next } from '../../i18n/i18n';
 
@@ -10,7 +9,7 @@ describe('Test Page: Dashboard', () => {
   let TrasnlatedComponent: React.ComponentType;
   beforeAll(() => {
     initI18Next();
-    TrasnlatedComponent = withTranslation()(Dashboard);
+    TrasnlatedComponent = Dashboard;
   });
 
   it('should render dashboard with pageheader', () => {

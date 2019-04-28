@@ -1,17 +1,39 @@
 import * as React from 'react';
-import { withTranslation } from 'react-i18next';
 import { Route, RouteProps } from 'react-router-dom';
-import { Counter } from '~pages/counter/counter';
-import { Dashboard } from '~pages/dashboard/dashboard';
+import { RouteError } from '~pages/route-error/route-error';
+
+const Dashboard = React.lazy(async () => {
+  try {
+    return {
+      default: (await import('~pages/dashboard/dashboard')).Dashboard,
+    };
+  } catch (err) {
+    return {
+      default: () => <div><RouteError errorText={err.message} /></div>,
+    };
+  }
+});
+
+const Counter = React.lazy(async () => {
+  try {
+    return {
+      default: (await import('~pages/counter/counter')).Counter,
+    };
+  } catch (err) {
+    return {
+      default: () => <div><RouteError errorText={err.message} /></div>,
+    };
+  }
+});
 
 const routes: RouteProps[] = [
   {
     path: '/',
-    component: withTranslation()(Dashboard),
+    render: (props) => <Dashboard {...props} />,
   },
   {
     path: '/counter',
-    component: Counter,
+    render: (props) => <Counter {...props} />,
   },
 ];
 
@@ -20,7 +42,12 @@ const routes: RouteProps[] = [
  */
 function getRoutes(): JSX.Element[] {
   return routes.map((route: RouteProps) => (
-    <Route key={route.path as string} exact={true} path={route.path} component={route.component} />
+    <Route
+      key={route.path as string}
+      exact={true}
+      path={route.path}
+      render={route.render}
+    />
   ));
 }
 
