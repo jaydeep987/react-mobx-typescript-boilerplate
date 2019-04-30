@@ -1,4 +1,4 @@
-import { CssBaseline, withStyles } from '@material-ui/core';
+import { CircularProgress, CssBaseline, withStyles } from '@material-ui/core';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { WithTranslation, withTranslation } from 'react-i18next';
@@ -35,9 +35,11 @@ class Home extends React.Component<HomeProps> {
         <AppDrawer t={t} i18n={i18n} />
         <main className={classes.mainContent}>
           <div className={classes.toolbar} />
-          <div className={classes.innerWrapper}>
-            <Routes />
-          </div>
+          <React.Suspense fallback={<CircularProgress className={classes.pageLoading} />}>
+            <div className={classes.innerWrapper}>
+              <Routes />
+            </div>
+          </React.Suspense>
         </main>
       </div>
     );

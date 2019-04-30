@@ -28,7 +28,9 @@ describe('Test Page: Home', () => {
     HomeComponent = (
       <Provider {...{settingStore}}>
         <HashRouter>
-          <Home classes={classes} />
+          <React.Suspense fallback={<div>Loading ....</div>}>
+            <Home classes={classes} />
+          </React.Suspense>
         </HashRouter>
       </Provider>
     );

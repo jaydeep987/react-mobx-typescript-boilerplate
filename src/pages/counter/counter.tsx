@@ -6,6 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { inject, observer } from 'mobx-react';
 import * as React from 'react';
 import { WithTranslation, withTranslation } from 'react-i18next';
+import { RouteComponentProps } from 'react-router-dom';
 import { PageContent } from '~components/page-content/page-content';
 import { PageHeader } from '~components/page-header/page-header';
 import { CounterStore } from '~stores/counter';
@@ -90,7 +91,7 @@ interface StoreProps {
 
 type InjectedProps = StoreProps & WithTranslation & StyledComponentProps<Classes>;
 
-type CounterProps = Partial<StoreProps> & WithTranslation;
+type CounterProps = Partial<StoreProps> & WithTranslation & Partial<RouteComponentProps>;
 
 const WrappedCounter = withStyles(styles)(withTranslation()(Counter));
 

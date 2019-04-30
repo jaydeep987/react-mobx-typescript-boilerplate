@@ -44,12 +44,17 @@ module.exports = (env) => {
       optimization: {
         /** Dead code elimination in minimizers will benefit from this and can remove unused exports. DEFAULT on in production only */
         usedExports: true,
-        /** Split vendors into chunks to separate out from src */
+        /** Enable code splitting. Also separate vendor chunk. */
         splitChunks: {
           cacheGroups: {
-            commons: {
+            /** common chunk for components which are used multiple places */
+            common: {
               chunks: 'all',
+              /** tells SplitChunksPlugin to only inject module inside common chunk if and only if they are shared between at least 2 chunks */
               minChunks: 2,
+              /** tells SplitChunksPlugin to use existing chunk if available instead of creating new one. */
+              reuseExistingChunk: true,
+              enforce: true,
               maxInitialRequests: 5,
               minSize: 0,
             },

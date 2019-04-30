@@ -12,6 +12,7 @@ If you want to get boilerplate *without react-router*, please checkout branch `w
 # Features
   - Using `Babel7` and `typescript` to use latest `ecma` features
   - `react v16.8.3` included
+  - Supports `code-splitting` or `lazy-loading components` by using `React.lazy` and `React.Suspense`
   - Configured with `mobx`, no more bunch of code writing in redux or something
   - Configured `react-router` for routing support
   - *Themed* with beautiful `material-ui`!
@@ -20,6 +21,8 @@ If you want to get boilerplate *without react-router*, please checkout branch `w
   - *i18n* setup
   - *Testing* with `jest` *(this can be improved for snapshot testing)*
   - Included small demo of counter 
+
+**Note:** Test cases are failing after added support for `code-splitting` because `enzyme` does not support `React.lazy` yet. It will be updated as soon as there will be some update from enzyme.
 
 # Getting started
 
